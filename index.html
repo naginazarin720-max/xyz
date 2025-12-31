@@ -11,34 +11,47 @@
         <div class="flip-card" id="card1">
             <div class="flip-card-inner">
                 <div class="flip-card-front">🎉 Click me!</div>
-                <div class="flip-card-back">Fake Message 1</div>
+                <div class="flip-card-back" data-msg="Fake Message 1">You opened the wrongone!hihihi</div>
             </div>
         </div>
         <div class="flip-card" id="card2">
             <div class="flip-card-inner">
                 <div class="flip-card-front">🎉 Click me!</div>
-                <div class="flip-card-back">Real Message: Happy New Year!</div>
+                <div class="flip-card-back" data-msg="Real Message: Happy New Year!">Real Message: Happy New Year soup!ok this year was a lot, you have went through lotta silent battles and many more things but here uh r! I am proud of how strong you are.
+     And thanks too for listening too my bina matlab ki baatein. 
+    Ik i dont say it often but i did get lucky that u were not an old man"
+    "Take a moment to appreciate yourself,will uh?"
+      "By any chance u clicked it first, do open the others too,its my hardwork!!!"</div>
             </div>
         </div>
         <div class="flip-card" id="card3">
             <div class="flip-card-inner">
                 <div class="flip-card-front">🎉 Click me!</div>
-                <div class="flip-card-back">Fake Message 2</div>
+                <div class="flip-card-back" data-msg="Fake Message 2">ha! wrong again,congrats!</div>
             </div>
         </div>
     </div>
+
     <button onclick="location.href='space.html'" class="next-btn">Go to Celebration!</button>
 
     <script>
-        // Make cards move randomly
         const cards = document.querySelectorAll('.flip-card');
+
+        // Customize card messages
+        cards.forEach(card => {
+            const back = card.querySelector('.flip-card-back');
+            const msg = back.getAttribute('data-msg'); // change message here
+            back.textContent = msg;
+        });
+
+        // Random floating animation slower
         setInterval(() => {
             cards.forEach(card => {
                 const x = Math.random() * (window.innerWidth - 120);
                 const y = Math.random() * (window.innerHeight - 160);
                 card.style.transform = `translate(${x}px, ${y}px)`;
             });
-        }, 500);
+        }, 1000); // slower than before (1 sec)
     </script>
 </body>
 </html>
