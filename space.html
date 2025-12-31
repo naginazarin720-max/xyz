@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Year Celebration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="confetti"></div>
+    <div class="balloons"></div>
+    <div class="message-board">🎉 Happy New Year! 🎉</div>
+
+    <script>
+        // Create confetti
+        const confettiContainer = document.querySelector('.confetti');
+        for (let i = 0; i < 100; i++) {
+            const conf = document.createElement('div');
+            conf.className = 'confetti-piece';
+            conf.style.left = Math.random() * 100 + 'vw';
+            conf.style.animationDelay = Math.random() * 5 + 's';
+            conf.style.background = ['#ff0','#f0f','#0ff','#f90'][Math.floor(Math.random()*4)];
+            confettiContainer.appendChild(conf);
+        }
+
+        // Create balloons
+        const balloonContainer = document.querySelector('.balloons');
+        for (let i = 0; i < 20; i++) {
+            const ball = document.createElement('div');
+            ball.className = 'balloon';
+            ball.style.left = Math.random() * 100 + 'vw';
+            ball.style.animationDelay = Math.random() * 5 + 's';
+            ball.style.background = ['#f00','#0f0','#00f','#ff0','#f0f','#0ff'][Math.floor(Math.random()*6)];
+            balloonContainer.appendChild(ball);
+        }
+
+        // Remove confetti/balloons after 10 seconds
+        setTimeout(() => {
+            confettiContainer.innerHTML = '';
+            balloonContainer.innerHTML = '';
+        }, 10000);
+    </script>
+</body>
+</html>
