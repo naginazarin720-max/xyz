@@ -112,3 +112,19 @@ body {
 @keyframes drop {
     to { top: 40%; }
 }
+.next-btn {
+    position: fixed;     /* keeps button fixed on screen */
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1000;       /* ensures it’s above the cards */
+    background-color: #ff7f50;
+    border: none;
+    border-radius: 10px;
+    color: white;
+}
+
